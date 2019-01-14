@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+{% block title %}MY_CINEMA Registration Form{% endblock %}
+{% form_theme formRegister 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+{{ form_start(formRegister) }}
+{{ form_row(formRegister.firstname, {'attr':{'placeholder':'First Name'}}) }}
+{{ form_row(formRegister.lastname, {'attr':{'placeholder':'Last Name'}}) }}
+{{ form_row(formRegister.email, {'attr':{'placeholder':'Email'}}) }}
+{{ form_row(formRegister.password) }}
+{{ form_row(formRegister.birthDate )}}
+{{ form_row(formRegister.address, {'attr':{'placeholder':'Address'}}) }}
+{{ form_row(formRegister.codePostal, {'attr':{'placeholder':'Code Postal'}}) }}
+{{ form_row(formRegister.city, {'attr':{'placeholder':'City'}}) }}
+{{ form_row(formRegister.country, {'attr':{'value':'France'}}) }}
+{{ form_row(formRegister.roles.setRendered()) }}
+<button type="submit" class="btn btn-success">Register</button>
+{{ form_end(formRegister) }}
+{% endblock %}

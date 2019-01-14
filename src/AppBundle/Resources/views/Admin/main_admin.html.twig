@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<h1>Admin page</h1>
+    <ul class="nav nav-pills">
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Users Action</a>
+        <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 39px, 0px);">
+        <a class="dropdown-item" href="{{ path('addUser') }}">Add User</a>
+        <a class="dropdown-item" href="#">Edit User</a>
+        <a class="dropdown-item" href="#">Delete User</a>
+        <a class="dropdown-item" href="#">Find User</a>
+        <a class="dropdown-item" href="#">List User</a>
+    </li>
+     <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Film Action</a>
+        <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 39px, 0px);">
+        <a class="dropdown-item" href="#">Add Film</a>
+        <a class="dropdown-item" href="#">Edit Film</a>
+        <a class="dropdown-item" href="#">Delete Film</a>
+        <a class="dropdown-item" href="#">Find Film</a>
+        <a class="dropdown-item" href="#">List Film</a>
+        <a class="dropdown-item" href="#">Add Category</a>
+        <a class="dropdown-item" href="#">List Category</a>
+    </li>
+    </ul>
+{% endblock %}

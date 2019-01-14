@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Latest Films</h1>
+<section class="films">
+    {% for film in films %}
+        <article>
+            <h2>{{film.titre}}</h2>
+            <div class="metadata"><strong>Category</strong>: {{ film.category.name | capitalize }}</div>
+        </article>
+        <div class="content">
+            {{film.resum}}
+        </div>
+    {% endfor %}  
+</section>
+{% endblock %}

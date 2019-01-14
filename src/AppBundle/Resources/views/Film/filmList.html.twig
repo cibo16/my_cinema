@@ -1,0 +1,38 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Films{% endblock %}
+
+{% block body %}
+
+<h1>Film List</h1>
+<section class="films">
+    {% for film in films %}
+        <article>
+            <h2>{{film.titre}}</h2>
+            <div class="metadata"><strong>Category</strong>: {{ film.category.name | capitalize }}</div>
+        </article>
+        <div class="content">
+            {{film.resum}}
+        </div>
+        <section id="comment">
+        {% if film.comments | length > 0 %}
+        <h4>Comments</h4>
+        {% endif %}
+            {% for comment in film.comments %}
+                
+                <div class="comment">
+                    <div class="row">
+                        <div class="col-3">
+                            {{ comment.user }} (<small>{{comment.createdAt | date('d/m/Y')}}</small>)
+                        </div>
+                        <div class="col">
+                            {{ comment.content | raw }}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </section>
+    {% endfor %}  
+    <div class="text-center">{{ knp_pagination_render(films) }}</div>  
+</section>
+{% endblock %}

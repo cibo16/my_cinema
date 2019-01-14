@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+{% block title %}MY_CINEMA Registration Form{% endblock %}
+{% form_theme addUser 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+{{ form_start(addUser) }}
+{{ form_row(addUser.firstname, {'attr':{'placeholder':'First Name'}}) }}
+{{ form_row(addUser.lastname, {'attr':{'placeholder':'Last Name'}}) }}
+{{ form_row(addUser.email, {'attr':{'placeholder':'Email'}}) }}
+{{ form_row(addUser.password) }}
+{{ form_row(addUser.birthDate )}}
+{{ form_row(addUser.address, {'attr':{'placeholder':'Address'}}) }}
+{{ form_row(addUser.codePostal, {'attr':{'placeholder':'Code Postal'}}) }}
+{{ form_row(addUser.city, {'attr':{'placeholder':'City'}}) }}
+{{ form_row(addUser.roles) }}
+{{ form_row(addUser.country, {'attr':{'value':'France'}}) }}
+<button type="submit" class="btn btn-success">Add User</button>
+{{ form_end(addUser) }}
+{% endblock %}
